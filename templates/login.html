@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>User Authentication</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS link -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <style>
+    body {
+        background-image: url("static/style/images/bg2.jpg");
+        background-size: cover;
+        background-position: center;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* Ensure full-height layout */
+    }
+
+    .form-wrapper {
+        background-color: rgba(255, 255, 255, 0.85); /* Adjusted opacity for better readability */
+        padding: 25px;
+        border-radius: 30px;
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        max-width: 800px;
+        width: 80%; /* Adjusted width for better centering */
+        margin: auto; /* Center the form horizontally */
+        margin-top: 50px; /* Increased top margin for spacing */
+        flex: 1; /* Take remaining space */
+    }
+
+    .form-title {
+        color: #2aa747;
+        font-weight: bold;
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    footer {
+        background-color: #343a40; /* Bootstrap dark background */
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="form-wrapper">
+        <form action="{% if login_type == 'rain' %}/login_rain{% else %}/login_crop{% endif %}" method="POST">
+          <h1 class="form-title">Login</h1>
+          <div class="form-group">
+            <label for="email" class="font-weight-bold">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+          </div>
+          <div class="form-group">
+            <label for="pwd" class="font-weight-bold">Password:</label>
+            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password">
+          </div>
+          <button type="submit" class="btn btn-success btn-block">Submit</button>
+          <hr>
+          <a href="{% if login_type == 'rain' %}/register_rain{% else %}/register_crop{% endif %}" class="text-info">Go To Register</a>
+          {% if error %}
+          <hr>
+          <div class="alert alert-danger" role="alert">
+            <script>
+              alert("{{ error }}")
+            </script>
+          </div>
+          {% endif %}
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="bg-dark text-white text-center">
+  <div class="container">
+    <p class="mb-0">Meet the creators: - <a href="https://myash21.github.io/portfolio.github.io/" class="text-white">Yash Mhaskar</a>,<a href="https://capybara-brain346.github.io/social-goggles/"  style="color: white; text-decoration: none;">Piyush Choudhari</a>  & <a href="https://aaryanpalve5.github.io/PortfolioASP/index.html" class="text-white">Aaryan Palve</a></p>
+  </div>
+</footer>
+
+<!-- Bootstrap JS and dependencies (already included in head) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-AutSOr0eoZ49NQbUc/zG4ZGwlF5Dlq3S1C8s/jIRw8BxVhRyXGCXQZj5YV6hN1N+" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CGpP6Pcusk6Jv" crossorigin="anonymous"></script>
+
+</body>
+</html>

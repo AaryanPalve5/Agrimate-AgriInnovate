@@ -1,0 +1,85 @@
+body {
+    background-image: url("static/images/bg3.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%);
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px; 
+    padding-bottom: 50px; 
+}
+
+h1 {
+    color: purple;
+    font-weight: bold;
+    font-size: 64px;
+    margin: 20px 0;
+    padding: 20px 40px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+    text-align: center;
+}
+
+.image-link {
+    display: block;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.image-container:hover .overlay {
+    opacity: 1;
+}
+
+.overlay-content {
+    color: white;
+    font-size: 24px;
+    text-align: center;
+}
+
+.cloud-image {
+    background-image: url("static/images/cloud3.png");
+    opacity: 0.8;
+    max-width: 60%;
+    filter: sepia(100%);
+    transition: transform 0.8s ease;
+}
+
+.cloud-image:hover {
+    opacity: 1;
+    transform: scale(1.1) translateY(-10%);
+    cursor: pointer;
+}
+
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 9999; /* Ensure footer is on top of other content */
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>User Authentication</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS link -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <style>
+    body {
+        background-image: url("static/style/images/bg2.jpg");
+        background-size: cover;
+        background-position: center;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 16px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 0 15px; /* Added padding */
+    }
+
+    .form-wrapper {
+        background-color: rgba(255, 255, 255, 0.95); /* Adjusted opacity */
+        padding: 40px; /* Increased padding */
+        border-radius: 20px; /* Reduced border radius */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Adjusted box shadow */
+        text-align: center;
+        max-width: 600px; /* Reduced max-width */
+        width: 100%; /* Set width to 100% */
+        margin-bottom: 30px; /* Increased margin bottom */
+    }
+
+    .form-title {
+        color: green;
+        font-size: 36px; /* Decreased font size */
+        margin-bottom: 20px; /* Increased margin bottom */
+    }
+
+    .form-group {
+        margin-bottom: 20px; /* Increased margin bottom */
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px; /* Adjusted margin bottom */
+        font-size: 20px; /* Decreased font size */
+    }
+
+    input[type="email"],
+    input[type="password"] {
+        height: 45px; /* Increased height */
+        padding: 12px; /* Increased padding */
+        margin-bottom: 20px; /* Increased margin bottom */
+        border: 2px solid #ccc; /* Increased border width */
+        border-radius: 12px; /* Increased border radius */
+        box-sizing: border-box;
+        font-size: 16px; /* Decreased font size */
+    }
+
+    button[type="submit"] {
+        padding: 14px; /* Increased padding */
+        background-color: green;
+        color: #fff;
+        border: none;
+        border-radius: 12px; /* Increased border radius */
+        cursor: pointer;
+        transition: background-color 0.3s;
+        font-size: 18px; /* Decreased font size */
+        width: 100%; /* Set width to 100% */
+    }
+
+    button[type="submit"]:hover {
+        background-color: darkgreen;
+    }
+
+    .btn-register {
+        margin-top: 20px; /* Decreased margin top */
+        font-size: 22px; /* Decreased font size */
+        text-decoration: none;
+        color: #141718;
+        transition: color 0.3s;
+    }
+
+    footer {
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="form-wrapper shadow">
+    <h1 class="form-title">Register</h1>
+    <hr><br>
+    {% if error %}
+    <div class="alert alert-danger" role="alert">
+      <script>
+        alert("{{ error }}")
+      </script> 
+    </div>
+    {% endif %}
+    <form action="{% if register_type == 'rain' %}/register_rain{% else %}/register_crop{% endif %}" method="POST">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" class="form-control" placeholder="Enter email" name="email">
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" id="pwd" class="form-control" placeholder="Enter password" name="password">
+      </div>
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+    <a href="{% if register_type == 'rain' %}/login_rain{% else %}/login_crop{% endif %}" class="btn btn-secondary btn-lg btn-block mt-4">Go to Login</a>
+  </div>
+</div>
+
+
+<!-- Bootstrap JS and dependencies (already included in head) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-AutSOr0eoZ49NQbUc/zG4ZGwlF5Dlq3S1C8s/jIRw8BxVhRyXGCXQZj5YV6hN1N+" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CGpP6Pcusk6Jv" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+.rainfall-table {
+    width: 80%;
+    margin: 20px auto; /* Align table towards center */
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: auto; /* Add scroll bar */
+}
+
+.rainfall-table th,
+.rainfall-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.rainfall-table thead {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.rainfall-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+body {
+    background-image: url("images/bg3.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%);
+    margin: 0;
+    padding: 0;
+    overflow: auto; /* Allow content to overflow */
+    background-attachment: fixed; /* Keep background fixed */
+}
+
+
+h1 {
+    color: purple;
+    font-weight: bold;
+    font-size: 64px;
+    margin: 20px 0;
+    padding: 20px 40px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+    text-align: center;
+}

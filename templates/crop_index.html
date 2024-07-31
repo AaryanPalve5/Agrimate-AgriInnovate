@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrimate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url("static/style/images/cropbg.jpg");
+            background-size: cover;
+            margin: 0;
+            font-family: Playfair Display;
+            padding: 0;
+        }
+
+        .container {
+            width: 60%;
+            margin: 50px auto;
+            background-color: rgba(255, 255, 255, 0.441); /* Semi-transparent white background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 72px); /* Adjusted width */
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #040202;
+            background: transparent;
+        }
+
+        input[type="submit"] {
+            width: 50%;
+            padding: 10px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Added styles for the logout button */
+        .logout-form {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .logout-button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #f44336; /* Red color for logout button */
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .logout-button:hover {
+            background-color: #d32f2f; /* Darker red color on hover */
+        }
+        @media screen and (max-width: 768px) {
+            .container {
+                width: 80%; /* Adjust container width for smaller screens */
+            }
+            h1 {
+                font-size: 24px; /* Decrease font size for smaller screens */
+            }
+            label {
+                font-size: 16px; /* Decrease font size for smaller screens */
+            }
+            input[type="text"], input[type="submit"] {
+                width: 100%; /* Make inputs full width for smaller screens */
+            }
+            .logout-button {
+                width: 100%; /* Make logout button full width for smaller screens */
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Enter the following details</h1><hr>
+        <form action="{{ url_for('crop_parameters') }}" method="POST" style="font-size: larger;">
+            <label for="N">Ratio of Nitrogen content in soil:</label>
+            <input type="text" id="N" name="N" required>
+            
+            <label for="P">Ratio of Phosphorous content in soil:</label>
+            <input type="text" id="P" name="P" required>
+            
+            <label for="K">Ratio of Potassium content in soil:</label>
+            <input type="text" id="K" name="K" required>
+            
+            <label for="temperature">Temperature in degree Celsius:</label>
+            <input type="text" id="temperature" name="temperature" required>
+            
+            <label for="humidity">Relative humidity in %:</label>
+            <input type="text" id="humidity" name="humidity" required>
+            
+            <label for="ph">pH of soil:</label>
+            <input type="text" id="ph" name="ph" required>
+            
+            <label for="rainfall">Rainfall in mm:</label>
+            <input type="text" id="rainfall" name="rainfall" required>
+            
+            <input type="submit" value="Submit">
+        </form>
+
+        <!-- Logout button -->
+        <div class="logout-form">
+            <form action="{{ url_for('logout_crop') }}" method="POST">
+                <button type="submit" class="logout-button">Logout  </button>
+            </form>
+        </div>
+    </div>
+    <br><br>
+    <footer style="margin-bottom: -290px; font-size: larger; background-image: linear-gradient(45deg, #000000, #333333); color: white; width: 100%; position: absolute; bottom: 0; padding: 10px; font-family: 'Times New Roman', Times, serif; font-size: large; text-align: center;">
+        <p>Meet the creators: - <a href="https://myash21.github.io/portfolio.github.io/" style="color: white; text-decoration: none;">Yash Mhaskar</a>,<a href="https://capybara-brain346.github.io/social-goggles/"  style="color: white; text-decoration: none;">Piyush Choudhari</a>  & <a href="https://aaryanpalve5.github.io/PortfolioASP/index.html" target="_blank" style="color: white; text-decoration: none;">Aaryan Palve</a></p>
+    </footer>
+    
+</body>
+</html>

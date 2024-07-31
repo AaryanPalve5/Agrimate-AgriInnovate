@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Rainfall Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/result.css') }}">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div id="loading-overlay">
+        <div class="spinner"></div>
+    </div>
+    
+    <h1>Predicted Rainfall</h1>
+    <div class="container">
+        <table class="rainfall-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Rainfall (in mm)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for result in prediction_results %}
+                <tr>
+                    <td>{{ result['Date'] }}</td>
+                    <td>{{ result['Rainfall'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <a href="/" style="text-decoration: none; color: white; font-family:Bebas Neue;">
+        <button style="filter: grayscale(1%) ;font-size: 32px; width: 20%; margin-left:40% ; padding: 20px; border: none; background-color: #4CAF50; color: white; cursor: pointer; border-radius: 5px; transition: background-color 0.3s; font-size: larger;">
+            Go to Home page
+        </button>
+    </a>
+
+    <footer style="margin-bottom: -150px; background-color: black; color: white; width: 100%;  position: absolute; bottom: 0; font-family: 'Times New Roman', Times, serif; font-size: larger; text-align: center;">
+        <p>Meet the creators: - <a href="https://myash21.github.io/portfolio.github.io/" style="color: white; text-decoration: none;">Yash Mhaskar</a>,<a href="https://capybara-brain346.github.io/social-goggles/"  style="color: white; text-decoration: none;">Piyush Choudhari</a>  & <a href="https://aaryanpalve5.github.io/PortfolioASP/index.html" target="_blank" style="color: white; text-decoration: none;">Aaryan Palve</a></p>
+    </footer>
+</body>
+</html>

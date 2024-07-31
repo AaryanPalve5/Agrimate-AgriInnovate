@@ -1,0 +1,91 @@
+.rainfall-table {
+    width: 80%;
+    margin: 20px auto; /* Align table towards center */
+    border-collapse: collapse;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: auto; /* Add scroll bar */
+}
+
+.rainfall-table th,
+.rainfall-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.rainfall-table thead {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.rainfall-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+body {
+    background-image: url("images/bg3.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%);
+    margin: 0;
+    padding: 0;
+    overflow: auto; /* Allow content to overflow */
+    background-attachment: fixed; /* Keep background fixed */
+}
+
+
+h1 {
+    color: purple;
+    font-weight: bold;
+    font-size: 64px;
+    margin: 20px 0;
+    padding: 20px 40px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+    text-align: center;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed; /* Change from 'absolute' to 'fixed' */
+    bottom: 0;
+    width: 100%;
+    z-index: 9999; /* Ensure footer is on top of other content */
+}
+
+
+#loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 9999;
+    display: none; /* Initially hide the loading overlay */
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #333;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -25px;
+    margin-left: -25px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

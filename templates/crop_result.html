@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            text-align: center;
+            background-image: url("static/style/images/cropbg.jpg");
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family:Playfair Display;
+        }
+
+        .container {
+            width: 60%;
+            margin: 100px auto;
+            background-color: rgba(255, 255, 255, 0.005); /* Added translucency */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Enhanced box shadow */
+            backdrop-filter: blur(4px); /* Added backdrop filter for a frosted glass effect */
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333; /* Darkened heading color */
+        }
+
+       
+
+      
+
+        .submit-button {
+            font-size: 22px;
+            width: 30%;
+            padding: 20px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .submit-button:hover {
+            background-color: #1E8449; /* Darkened hover color */
+        }
+        @media screen and (max-width: 768px) {
+            .container {
+                width: 70%; /* Adjusted width for smaller screens */
+            }
+
+            h1 {
+                font-size: 36px; /* Decreased font size for smaller screens */
+            }
+
+            .submit-button {
+                width: 70%; /* Adjusted width for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body><br><br><br>
+    <div class="container">
+        <h1 style="font-size: 50px;">Result</h1>
+        <hr>
+        <p style="font-size: 30px; color: black;"  ><strong>Predicted Crop:</strong> {{ crop }}</p>
+        
+        <br><br><a href="/"><button type="submit" class="submit-button" style="
+            font-family:Playfair Display;">
+            Go to Home page
+        </button></a>
+    </div>
+    <br><br><br><br><br>
+    <footer style=" background-color: black; color: white; width: 100%;bottom:0; position: absolute;padding-top: 20px;  padding: 10px; font-family: 'Times New Roman', Times, serif; font-size: large; text-align: center; margin-top: 20px;">
+        <p style="color:whitesmoke; font-size: larger;">Meet the creators: - <a href="https://myash21.github.io/portfolio.github.io/" style="color: white; text-decoration: none;">Yash Mhaskar</a>,<a href="https://capybara-brain346.github.io/social-goggles/"  style="color: white; text-decoration: none;">Piyush Choudhari</a>  & <a href="https://aaryanpalve5.github.io/PortfolioASP/index.html" target="_blank" style="color: white; text-decoration: none;">Aaryan Palve</a></p>
+    </footer>
+</body>
+</html>

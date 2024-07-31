@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrimate</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-image: url("static/style/images/bg2.jpg");
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            font-family: "Bebas Neue", sans-serif;
+            margin: 0;
+        }
+
+        .navbar {
+            margin-top: 20px; /* Adjust the margin to move the navbar down */
+            padding: 10px; /* Add padding for better visibility */
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        @media (min-width: 992px) { /* For larger screens */
+            .navbar {
+                padding: 20px; /* Increase padding for larger screens */
+            }
+
+            .navbar-nav .nav-link {
+                font-size: 1.5rem;
+                font-weight: 900;
+            }
+        }
+
+        .Agrimate h1 {
+            letter-spacing: 15px;
+            font-weight: 1200;
+            font-size: calc(2rem + 3vw);
+        }
+
+        .Agrimate p {
+            letter-spacing: 6px;
+            font-size: calc(1rem + 1vw);
+            font-weight: 100;
+        }
+
+        @media (min-width: 992px) { /* For larger screens */
+            .Agrimate h1 {
+                font-size: calc(3rem + 5vw);
+                font-weight: 1500;
+            }
+
+            .Agrimate p {
+                font-size: calc(2rem + 2vw);
+                font-weight: 400;
+            }
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: larger;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+        <a class="navbar-brand" href="#">Menu</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('ground0') }}">Rainfall Prediction</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('crop_home') }}">Crop Recommendation</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="Agrimate text-center mt-5">
+        <h1 class="display-1">Agrimate</h1>
+        <p class="lead">Your A.I. assistant for agriculture</p>
+    </div>
+
+    <footer class="text-center">
+        <p>Meet the creators: <a href="https://myash21.github.io/portfolio.github.io/">Yash Mhaskar</a>,<a href="https://capybara-brain346.github.io/social-goggles/"  style="color: white; text-decoration: none;">Piyush Choudhari</a>   & <a href="https://aaryanpalve5.github.io/PortfolioASP/index.html" target="_blank">Aaryan Palve</a></p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

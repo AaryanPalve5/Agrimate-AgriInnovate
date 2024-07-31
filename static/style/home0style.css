@@ -1,0 +1,134 @@
+/* newhomestyle.css */
+
+body {
+    background-image: url('D:\ASP\ML\Rainfall-Prediction\Rainfall-Prediction\static\images\bg2.jpg');
+   
+    background-size:cover;
+    font-family: "Bebas Neue";
+    
+}
+
+.Agrimate h1{
+    margin-top: 100px;
+    letter-spacing: 15px;
+    text-align: center;
+    font-weight: 1200;
+    font-size: 140px; /* Adjust the font size as needed */
+}
+
+.Agrimate p{
+    margin-top: 5px;
+    letter-spacing: 6px;
+    font-size: 30px;
+    font-weight: 100;
+}
+
+
+.container {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height: 100vh; /* Ensures the container covers the entire viewport height */
+}
+
+.card-link {
+    text-decoration: none;
+}
+
+.translucent-card {
+    position: fixed;
+    bottom: 210px; /* Adjust as needed */
+    left: 300px; /* Adjust as needed */
+    background-color: rgba(247, 247, 246, 0.147); /* Adjust the alpha value for translucency */
+    padding: 10px;
+    border-radius: 10px;
+    margin-left: 100px;
+    font-size: 38px; /* Adjust the font size as needed */
+}
+
+
+/* Style the navigation bar *//* Style the navigation bar */
+.navbar {
+    overflow: hidden;
+    background-color: transparent; /* Make navbar transparent */
+}
+
+.navbar {
+    position: fixed; /* Fixed positioning */
+    top: 0; /* Position at the top of the viewport */
+    left: 0; /* Align with the left edge */
+    width: 100%; /* Full width */
+    background-color:transparent;/* Black background color */
+    z-index: 1000; /* Ensure the navbar appears above other content */
+  }
+  
+  .navbar ul {
+    text-align: right;
+    list-style-type: none; /* Remove bullet points */
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .navbar li {
+    font-size:2px;
+    /* Each navbar item takes equal space */
+  }
+  
+  .navbar a {
+    display: block;
+    color: black; /* White text color */
+    text-align: center;
+    padding: 20px 30px; /* Increased vertical and horizontal padding */
+    text-decoration: none;
+    font-size: 38px; /* Increased font size */
+    transition: background-color 0.3s; /* Smooth transition */
+  }
+  
+  /* Change color on hover */
+  .navbar a:hover {
+    background-color: #34812d; /* Darker background color on hover */
+  }
+  
+  /* Active/current link */
+  .navbar .active {
+    background-color: #4CAF50; /* Green */
+  }
+  
+    /* Change color on hover */
+    .navbar a:hover {
+      background-color:forestgreen /* Darker background color on hover */
+    }
+    
+    /* Active/current link */
+    .navbar .active {
+      background-color: #4CAF50; /* Green */
+    }
+    
+  
+    
+  /* Responsive navigation */
+  @media screen and (max-width: 768px) {
+  
+      
+      .project-container {
+          margin-top: 770px; /* Adjust margin-top for smaller screens */
+          
+          padding-bottom: 90px;
+        }
+        .navbar a{
+          
+    font-size: 10px; 
+  
+        }
+  
+      .navbar ul {
+        flex-direction: row; /* Stack items vertically on smaller screens */
+      }
+      .navbar li {
+        
+        text-align: center; /* Center align items */
+        border-bottom: 1px solid #666; /* Add a border between items */
+      }  
+      
+      
+  
+    }
