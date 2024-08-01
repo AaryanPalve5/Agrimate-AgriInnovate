@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Classification</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-image: url("bg2.jpg");
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            font-family: "Roboto", sans-serif;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly white background for better readability */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 1.1rem; /* Slightly smaller font size */
+            color: #333; /* Dark text color */
+            transition: color 0.3s, background-color 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #fff;
+            background-color: #007bff; /* Softer blue background on hover */
+        }
+
+        .container {
+            padding-top: 80px; /* Adjusted padding to fit well with the new navbar */
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly white card background */
+            border-radius: 15px; /* More rounded corners */
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .card h1 {
+            font-size: 2.5rem;
+            color: #007bff; /* Blue color for the heading */
+        }
+
+        .form-control-file {
+            border-radius: 10px; /* Rounded corners for file input */
+            border: 2px solid #007bff; /* Blue border */
+        }
+
+        .btn-primary {
+            background-color: #007bff; /* Consistent button color */
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+            border-color: #004085;
+        }
+
+        .footer {
+            background-color: #343a40; /* Dark gray background */
+            color: white;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            text-align: center;
+            padding: 15px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer a {
+            color: #f8f9fa; /* Light text color */
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <a class="navbar-brand" href="#">Agrimate</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('ground0') }}">Rainfall Prediction</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('crop_home') }}">Crop Recommendation</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h1 class="display-4">Upload an Image for Classification</h1>
+                        <form action="/predict" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <input type="file" name="file" accept="image/*" class="form-control-file mb-3">
+                            </div>
+                            <input type="submit" value="Upload" class="btn btn-primary">
+                        </form>
+                        {% if prediction %}
+                            <h2 class="mt-4">Prediction: {{ prediction }}</h2>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Meet the creators: - <a href="https://myash21.github.io/portfolio.github.io/" target="_blank">Yash Mhaskar</a> & <a href="https://aaryanpalve5.github.io/PortfolioASP/index.html" target="_blank">Aaryan Palve</a></p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
