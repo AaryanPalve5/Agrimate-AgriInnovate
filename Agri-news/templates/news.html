@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture News</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold text-center mb-8">Agriculture and Farming News</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {% for article in articles %}
+                <div class="news-item bg-white rounded-lg shadow-md p-6">
+                    {% if article['urlToImage'] %}
+                        <img src="{{ article['urlToImage'] }}" alt="Article Image" class="w-full h-48 object-cover rounded mb-4">
+                    {% endif %}
+                    <h2 class="text-2xl font-semibold mb-2">
+                        <a href="{{ article['url'] }}" target="_blank" class="text-blue-600 hover:text-blue-800">{{ article['title'] }}</a>
+                    </h2>
+                    <p class="text-gray-700">{{ article['description'] }}</p>
+                    <small class="text-gray-500">{{ article['publishedAt'] }}</small>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
